@@ -1,0 +1,29 @@
+<%= form_for(@interview) do |f| %>
+  <% if @interview.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@interview.errors.count, "error") %> prohibited this interview from being saved:</h2>
+
+      <ul>
+      <% @interview.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :mandate %><br />
+    <%= f.collection_select :mandate_id,Mandate.find(:all),:id,:name,{:prompt => "select mandate"} %>
+  </div>
+  <div class="field">
+    <%= f.label :applicant %><br />
+    <%= f.collection_select :applicant_id,Applicant.find(:all),:id,:name,{:prompt => "select applicant"} %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

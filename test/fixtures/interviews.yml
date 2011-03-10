@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  mandate: 
+  applicant: 
+  description: MyString
+
+two:
+  mandate: 
+  applicant: 
+  description: MyString
